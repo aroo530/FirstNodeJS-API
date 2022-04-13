@@ -32,14 +32,14 @@ project structure:
     ├───spec
     │ └───support
 
-    here are all the TS files app.ts is the start of the project has the listen functions
+    here are all the TS files, app.ts is the start of the project has the listen functions
     └───src
 
-        modules has the utilities modules is more diverse of a name so I used it
-        here you'll fine the images.ts file has the middleware and the resize function
+        modules has the utilities, modules is more diverse of a name so I used it.
+        here you'll find the images.ts file has the middleware and the resize function
         ├───modules
 
-        here is the routing system that starts with index.ts the in the api folder there is the getImage which has all the magic in it
+        here is the routing system that starts with index.ts. the in the api folder there is the getImage which has all the magic in it
         ├───routes
         │   └───api
 
@@ -50,7 +50,7 @@ project structure:
             └───routes
                 └───api
 
-    all the js files details are
+    all the js files 
     ├───build
     │ ├───modules
     │ ├───routes
