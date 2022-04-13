@@ -1,7 +1,3 @@
-<style>
-p {font-weight:bold;}
-</style>
-
 <h1> welcome to project 1 image API </h1>
 I'll not waste your time here
 
@@ -9,15 +5,15 @@ npm run:
 
 <h2> don't forget npm install to get all dependencies </h2>
     <small>run jasmine test on the latest build</small>
-    <p>"test": "npm run build && npm run jasmine"</p>
+    <p style="font-weight:bold;">"test": "npm run build && npm run jasmine"</p>
     <small>run jasmine on existing build</small>
-    <p>"jasmine": "jasmine"</p>
+    <p style="font-weight:bold;">"jasmine": "jasmine"</p>
     <small>build to convert the typescript to javascript</small> 
-    <p>"build": "npx tsc"</p>
+    <p style="font-weight:bold;">"build": "npx tsc"</p>
     <small>run the typescript build</small>
-    <p>"TSstart": "nodemon src/app.ts"</p>
+    <p style="font-weight:bold;">"TSstart": "nodemon src/app.ts"</p>
     <small>run the javavScript build</small>
-    <p>"JSstart": "npm run build && nodemon build/app.js"</p>
+    <p style="font-weight:bold;">"JSstart": "npm run build && nodemon build/app.js"</p>
 
 I didn't use eslint nor prettier configs and scripts since my IDE has support for them
 
