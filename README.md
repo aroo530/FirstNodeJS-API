@@ -1,4 +1,6 @@
 <style>
+p {font-weight:bold;}
+</style>
 
 <h1> welcome to project 1 image API </h1>
 I'll not waste your time here
