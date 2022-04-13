@@ -4,15 +4,15 @@ I'll not waste your time here
 npm run:
 
 <h2> don't forget npm install to get all dependencies </h2>
-    <!-- run jasmine test on the latest build -->
+    <small>run jasmine test on the latest build</small>
     "test": "npm run build && npm run jasmine",
-    <!-- run jasmine on existing build -->
+    <small>run jasmine on existing build</small>
     "jasmine": "jasmine",
-    <!-- build to convert the typescript to javascript  -->
+    <small>build to convert the typescript to javascript</small> 
     "build": "npx tsc",
-    <!-- run the typescript build -->
+    <small>run the typescript build</small>
     "TSstart": "nodemon src/app.ts",
-    <!-- run the javavScript build -->
+    <small>run the javavScript build</small>
     "JSstart": "npm run build && nodemon build/app.js"
 
 I didn't use eslint nor prettier configs and scripts since my IDE has support for them
