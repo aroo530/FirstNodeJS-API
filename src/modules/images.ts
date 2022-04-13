@@ -61,4 +61,4 @@ async function resize(
     .toFile(`./images/thumbs/${filename}+${width}+${height}.png`);
 }
 
-export { validate, checkImage };
+export { resize, checkImage, validate };

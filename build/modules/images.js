@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkImage = exports.validate = void 0;
+exports.validate = exports.checkImage = exports.resize = void 0;
 const sharp_1 = __importDefault(require("sharp"));
 const fs_1 = require("fs");
 //this middleware is used to validate the query params
@@ -63,3 +63,4 @@ function resize(filename, width, height) {
             .toFile(`./images/thumbs/${filename}+${width}+${height}.png`);
     });
 }
+exports.resize = resize;
