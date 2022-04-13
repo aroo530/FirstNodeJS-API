@@ -21,42 +21,42 @@ the project is over organized and full of directories but u required scallable p
 
 project structure:
 
-├───.vscode
+    ├───.vscode
 
-so here are all the sourced images remember that if the dimensions change the api will creatte a new one  
-├───images
-│ ├───full
-│ └───thumbs
+    so here are all the sourced images remember that if the dimensions change the api will creatte a new one  
+    ├───images
+    │ ├───full
+    │ └───thumbs
 
-here is the jasmine config
-├───spec
-│ └───support
+    here is the jasmine config
+    ├───spec
+    │ └───support
 
-here are all the TS files app.ts is the start of the project has the listen functions
-└───src
+    here are all the TS files app.ts is the start of the project has the listen functions
+    └───src
 
-    modules has the utilities modules is more diverse of a name so I used it
-    here you'll fine the images.ts file has the middleware and the resize function
-    ├───modules
-
-    here is the routing system that starts with index.ts the in the api folder there is the getImage which has all the magic in it
-    ├───routes
-    │   └───api
-
-    here are all jasmine based tests
-    └───tests
-        ├───helpers
+        modules has the utilities modules is more diverse of a name so I used it
+        here you'll fine the images.ts file has the middleware and the resize function
         ├───modules
-        └───routes
-            └───api
 
-all the js files details are
-├───build
-│ ├───modules
-│ ├───routes
-│ │ └───api
-│ └───tests
-│ ├───helpers
-│ ├───modules
-│ └───routes
-│ └───api
+        here is the routing system that starts with index.ts the in the api folder there is the getImage which has all the magic in it
+        ├───routes
+        │   └───api
+
+        here are all jasmine based tests
+        └───tests
+            ├───helpers
+            ├───modules
+            └───routes
+                └───api
+
+    all the js files details are
+    ├───build
+    │ ├───modules
+    │ ├───routes
+    │ │ └───api
+    │ └───tests
+    │ ├───helpers
+    │ ├───modules
+    │ └───routes
+    │ └───api
