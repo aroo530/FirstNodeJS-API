@@ -7,9 +7,9 @@ const validate = (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
-) => {
+):void => {
   if (
-    req.query.filename &&
+    String(req.query.filename).match(/.(jpg|jpeg|png)$/i) &&
     Number(req.query.width) > 50 &&
     Number(req.query.height) > 50
   ) {
@@ -17,7 +17,7 @@ const validate = (
   } else {
     res
       .status(400)
-      .send("bad request - width and height must be greater than 50");
+      .send("bad request - width and height must be greater than 50 - filename must be a jpg or png");
   }
 };
 
@@ -26,7 +26,7 @@ const checkImage = async (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
-) => {
+) :Promise<void> => {
   const width = Number(req.query.width);
   const height = Number(req.query.height);
   const filename = String(req.query.filename);

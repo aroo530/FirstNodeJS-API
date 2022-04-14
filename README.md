@@ -1,6 +1,21 @@
 <h1> welcome to project 1 image API </h1>
 I'll not waste your time here
 
+entry point to application.
+http://localhost:3000/api/
+example url for application.
+http://localhost:3000/api/?filename=call.png&width=100&height=300
+image examples (are in the full folder)
+call.png
+callback.png
+functions.png
+output.png
+
+the api will return the image if and only if 
+    the image is in the full folder
+    the width and height are over 50 
+
+
 npm run:
 
 <h2> don't forget npm install to get all dependencies </h2>
@@ -23,7 +38,7 @@ project structure:
 
 ├───.vscode
 
-so here are all the sourced images remember that if the dimensions change the api will creatte a new one  
+so here are all the sourced images remember that if the dimensions change the api will create a new one  
 ├───images
 │ ├───full
 │ └───thumbs

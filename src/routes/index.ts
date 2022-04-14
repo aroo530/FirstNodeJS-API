@@ -3,7 +3,7 @@ import getImage from "./api/getImage";
 
 const routes = express.Router();
 
-routes.get("/", (req, res) => {
+routes.get("/", (req:express.Request, res:express.Response) => {
   res.send("main API!");
 });
 
