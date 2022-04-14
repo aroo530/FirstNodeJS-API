@@ -40,10 +40,10 @@ project structure:
 
     ├───.vscode
 
-so here are all the sourced images remember that if the dimensions change the api will create a new one  
-├───images
-│ ├───full
-│ └───thumbs
+    so here are all the sourced images remember that if the dimensions change the api will create a new one  
+    ├───images
+    │ ├───full
+    │ └───thumbs
 
     here is the jasmine config
     ├───spec
