@@ -2,9 +2,10 @@
 I'll not waste your time here
 
 entry point to application.
-http://localhost:3000/api/
+
+<p>http://localhost:3000/api/</p>
 example url for application.
-http://localhost:3000/api/?filename=call.png&width=100&height=300
+<p>http://localhost:3000/api/?filename=call.png&width=100&height=300</p>
 image examples (are in the full folder)
 call.png
 callback.png
