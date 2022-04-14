@@ -9,7 +9,7 @@
     "TSstart": "nodemon src/app.ts",
     "JSstart": "nodemon build/app.js",
     "lint": "eslint src/**/*.ts",
-    "lint-fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts --fix"
   },
   "keywords": [],
   "author": "arsany",
