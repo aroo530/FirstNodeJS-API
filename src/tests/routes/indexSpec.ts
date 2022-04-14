@@ -1,21 +1,21 @@
 // import  from "../index";
 // import  from "../../utilities/***";
 
-describe('parent controller', () => {
-    describe('child suite 1', () => {
-        beforeAll(() => {
+describe('parent controller', (): void => {
+    describe('child suite 1', (): void => {
+        beforeAll((): void => {
             // happens before all tests in this suite
         });
-        beforeEach(() => {
+        beforeEach((): void => {
             // happens before each test in this suite
         });
-        it('test in child suite 1 ', () => {
+        it('test in child suite 1 ', (): void => {
             // expect(return of a function).comparison(the expected value);
         });
-        afterEach(() => {
+        afterEach((): void => {
             // happens after each test in this suite
         });
-        afterAll(() => {
+        afterAll((): void => {
             // happens after all tests in this suite
         });
     });

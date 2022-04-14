@@ -8,7 +8,7 @@ const host: number | string = process.env.HOST || 'localhost';
 app.use('/', routes);
 
 try {
-    app.listen(port, host, () => {
+    app.listen(port, host, (): void => {
         console.log(`Server is listening on http://${host}:${port}`);
     });
 } catch (err) {
