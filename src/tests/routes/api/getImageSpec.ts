@@ -1,4 +1,4 @@
-import checkImage from "../../../routes/api/getImage";
+
 
 describe("parent controller", () => {
     describe("child suite 1", () => {

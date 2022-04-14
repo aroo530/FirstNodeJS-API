@@ -7,7 +7,9 @@
     "jasmine": "jasmine",
     "build": "npx tsc",
     "TSstart": "nodemon src/app.ts",
-    "JSstart": "nodemon build/app.js"
+    "JSstart": "nodemon build/app.js",
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint src/**/*.ts --fix"
   },
   "keywords": [],
   "author": "arsany",
