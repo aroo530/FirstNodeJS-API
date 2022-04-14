@@ -2,16 +2,17 @@
 I'll not waste your time here
 
 entry point to application.
-
 <a href="http://localhost:3000/api/"><p>http://localhost:3000/api/</p></a>
 example url for application.
 <a href="http://localhost:3000/api/?filename=call.png&width=100&height=300"><p>http://localhost:3000/api/?filename=call.png&width=100&height=300</p></a>
+
 image examples (are in the full folder)
 call.png
 callback.png
 functions.png
 output.png
 
+the thumbs folder should be empty
 the api will return the image if and only if 
     the image is in the full folder
     the width and height are over 50 
