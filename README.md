@@ -3,9 +3,9 @@ I'll not waste your time here
 
 entry point to application.
 
-<p>http://localhost:3000/api/</p>
+<a href="http://localhost:3000/api/"><p>http://localhost:3000/api/</p></a>
 example url for application.
-<p>http://localhost:3000/api/?filename=call.png&width=100&height=300</p>
+<a href="http://localhost:3000/api/?filename=call.png&width=100&height=300"><p>http://localhost:3000/api/?filename=call.png&width=100&height=300</p></a>
 image examples (are in the full folder)
 call.png
 callback.png
