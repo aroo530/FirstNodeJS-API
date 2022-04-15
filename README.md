@@ -13,10 +13,9 @@ functions.png
 output.png
 
 the thumbs folder should be empty
-the api will return the image if and only if 
-    the image is in the full folder
-    the width and height are over 50 
-
+the api will return the image if and only if
+the image is in the full folder
+the width and height are over 50
 
 npm run:
 
@@ -31,8 +30,11 @@ npm run:
     <p style="font-weight:bold;">"TSstart": "nodemon src/app.ts"</p>
     <small>run the javavScript build</small>
     <p style="font-weight:bold;">"JSstart": "npm run build && nodemon build/app.js"</p>
+    <small>run the preittier</small>
+    <p style="font-weight:bold;">"lint": "eslint src/**/*.ts"</p>
+    <small>run the eslint</small>
+    <p style="font-weight:bold;">"prettier": "prettier --config .prettierrc.json src/**/*.ts --write"</p>
 
-I didn't use eslint nor prettier configs and scripts since my IDE has support for them
 
 the project is over organized and full of directories but u required scallable project so this should do the trick
 
@@ -40,7 +42,7 @@ project structure:
 
     ├───.vscode
 
-    so here are all the sourced images remember that if the dimensions change the api will create a new one  
+    so here are all the sourced images remember that if the dimensions change the api will create a new one
     ├───images
     │ ├───full
     │ └───thumbs
@@ -67,7 +69,7 @@ project structure:
             └───routes
                 └───api
 
-    all the js files 
+    all the js files
     ├───build
     │ ├───modules
     │ ├───routes
