@@ -3,8 +3,8 @@ import sharp from 'sharp';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const thumbDir = path.join(__dirname, 'images/thumbs');
-const fullDir = path.join(__dirname, 'images/full');
+const thumbDir = path.join(__dirname, '../../images/thumbs');
+const fullDir = path.join(__dirname, '../../images/full');
 //this middleware is used to validate the query params
 const validate = (
     req: express.Request,
@@ -16,6 +16,7 @@ const validate = (
         Number(req.query.width) > 50 &&
         Number(req.query.height) > 50
     ) {
+        console.log('valid');
         next();
     } else {
         res.status(400).send(
@@ -33,16 +34,17 @@ const checkImage = async (
     const width = Number(req.query.width);
     const height = Number(req.query.height);
     const filename = String(req.query.filename);
-    const thumb = `${thumbDir}/${filename}+${width}+${height}.png`;
+    const thumb =path.join(`${thumbDir}`,`${filename}_${width}_${height}.png`);
+    console.log(thumb);
     //if file exists then next middleware
     // else resize the image and save it and then next middleware
     fs.readFile(thumb)
         .then(() => {
-            // console.log("thumb exists");
+            console.log("thumb exists");
             next();
         })
         .catch(() => {
-            // console.log("not found making thumb");
+            console.log("not found making thumb");
             resize(filename, width, height)
                 .then(() => {
                     next();
@@ -59,9 +61,12 @@ async function resize(
     width: number,
     height: number
 ): Promise<void> {
-    await sharp(`${fullDir}/${filename}`)
+    const imgPath = path.join(`${fullDir}`,`${filename}`);
+    const thumbPath = path.join(`${thumbDir}`,`${filename}_${width}_${height}.png`);
+    console.log(imgPath);
+    await sharp(imgPath)
         .resize(width, height, { fit: 'contain' })
-        .toFile(`${thumbDir}/${filename}_${width}_${height}.png`);
+        .toFile(thumbPath);
 }
 
 export { resize, checkImage, validate };

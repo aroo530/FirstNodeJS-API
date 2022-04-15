@@ -1,14 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-describe("parent controller", () => {
-    describe("child suite 1", () => {
+describe('parent controller', () => {
+    describe('child suite 1', () => {
         beforeAll(() => {
             // happens before all tests in this suite
         });
         beforeEach(() => {
             // happens before each test in this suite
         });
-        it("test in child suite 1 ", () => {
+        it('test in child suite 1 ', () => {
             // expect(return of a function).comparison(the expected value);
         });
         afterEach(() => {

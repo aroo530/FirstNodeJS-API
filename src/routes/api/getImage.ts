@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import { validate, checkImage } from '../../modules/images';
 
 const getImage = express();
@@ -11,8 +12,9 @@ getImage.get(
         const width = Number(req.query.width);
         const height = Number(req.query.height);
         const filename = String(req.query.filename);
-        res.sendFile(`${filename}+${width}+${height}.png`, {
-            root: './images/thumbs',
+        const thumbRoot = path.join( __dirname, '../../../images/thumbs');
+        res.sendFile(`${filename}_${width}_${height}.png`, {
+            root: `${thumbRoot}`,
         });
     }
 );

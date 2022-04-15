@@ -16,38 +16,38 @@ const supertest_1 = __importDefault(require("supertest"));
 const app_1 = __importDefault(require("../app"));
 const request = (0, supertest_1.default)(app_1.default);
 //we just test if the app is running and returning an image
-describe("Test endpoint responses", () => {
+describe('Test endpoint responses', () => {
     //this array consists of the expected response codes
     //the ndpoint will only return 200 if the image is stored and width and height are more than 50
     const tests = [
         //200 - image exists and is resized
         {
-            url: "/api/?filename=functions.png&width=300&height=400",
+            url: '/api/?filename=functions.png&width=300&height=400',
             status: 200,
-            type: "image/png",
+            type: 'image/png',
         },
         //404 - image does not exist
         {
-            url: "/api/?filename=notHere.png&width=300&height=400",
+            url: '/api/?filename=notHere.png&width=300&height=400',
             status: 404,
-            type: "text/html",
+            type: 'text/html',
         },
         //400 - image exists but width and height are less than 50
         {
-            url: "/api/?filename=functions.png&width=300&height=-400",
+            url: '/api/?filename=functions.png&width=300&height=-400',
             status: 400,
-            type: "text/html",
+            type: 'text/html',
         },
         //400 - image exists but width and height are less than 50
         {
-            url: "/api/?filename=functions.png&width=-300&height=400",
+            url: '/api/?filename=functions.png&width=-300&height=400',
             status: 400,
-            type: "text/html",
+            type: 'text/html',
         },
         {
-            url: "/api/?filename=functions.png&width=text&height=400",
+            url: '/api/?filename=functions.png&width=text&height=400',
             status: 400,
-            type: "text/html",
+            type: 'text/html',
         },
     ];
     tests.forEach((test) => {
