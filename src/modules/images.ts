@@ -16,7 +16,7 @@ const validate = (
         Number(req.query.width) > 50 &&
         Number(req.query.height) > 50
     ) {
-        console.log('valid');
+        // console.log('valid');
         next();
     } else {
         res.status(400).send(
@@ -35,16 +35,16 @@ const checkImage = async (
     const height = Number(req.query.height);
     const filename = String(req.query.filename);
     const thumb =path.join(`${thumbDir}`,`${filename}_${width}_${height}.png`);
-    console.log(thumb);
+    // console.log(thumb);
     //if file exists then next middleware
     // else resize the image and save it and then next middleware
     fs.readFile(thumb)
         .then(() => {
-            console.log("thumb exists");
+            // console.log("thumb exists");
             next();
         })
         .catch(() => {
-            console.log("not found making thumb");
+            // console.log("not found making thumb");
             resize(filename, width, height)
                 .then(() => {
                     next();
