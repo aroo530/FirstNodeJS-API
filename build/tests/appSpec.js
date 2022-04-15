@@ -34,18 +34,19 @@ describe('Test endpoint responses', () => {
         },
         //400 - image exists but width and height are less than 50
         {
-            url: '/api/?filename=functions.png&width=300&height=-400',
+            url: '/api/?filename=functions.png&width=-300&height=400',
             status: 400,
             type: 'text/html',
         },
         //400 - image exists but width and height are less than 50
         {
-            url: '/api/?filename=functions.png&width=-300&height=400',
+            url: '/api/?filename=functions.png&width=text&height=400',
             status: 400,
             type: 'text/html',
         },
+        //400 - image exists but wrong format
         {
-            url: '/api/?filename=functions.png&width=text&height=400',
+            url: '/api/?filename=functions&width=100&height=400',
             status: 400,
             type: 'text/html',
         },

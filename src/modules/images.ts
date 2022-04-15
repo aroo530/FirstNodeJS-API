@@ -1,10 +1,10 @@
-import express from 'express';
-import sharp from 'sharp';
-import { promises as fs } from 'fs';
-import path from 'path';
+import express from 'express'
+import sharp from 'sharp'
+import { promises as fs } from 'fs'
+import path from 'path'
 
-const thumbDir = path.join(__dirname, '../../images/thumbs');
-const fullDir = path.join(__dirname, '../../images/full');
+const thumbDir = path.join(__dirname, '../../images/thumbs')
+const fullDir = path.join(__dirname, '../../images/full')
 //this middleware is used to validate the query params
 const validate = (
     req: express.Request,
@@ -17,13 +17,13 @@ const validate = (
         Number(req.query.height) > 50
     ) {
         // console.log('valid');
-        next();
+        next()
     } else {
         res.status(400).send(
             'bad request - width and height must be greater than 50 - filename must be a jpg or png'
-        );
+        )
     }
-};
+}
 
 //this middleware is used to check if the image exists and if it does it will resize it and send it
 const checkImage = async (
@@ -31,42 +31,45 @@ const checkImage = async (
     res: express.Response,
     next: express.NextFunction
 ): Promise<void> => {
-    const width = Number(req.query.width);
-    const height = Number(req.query.height);
-    const filename = String(req.query.filename);
-    const thumb =path.join(`${thumbDir}`,`${filename}_${width}_${height}.png`);
+    const width = Number(req.query.width)
+    const height = Number(req.query.height)
+    const filename = String(req.query.filename)
+    const thumb = path.join(`${thumbDir}`, `${filename}_${width}_${height}.png`)
     // console.log(thumb);
     //if file exists then next middleware
     // else resize the image and save it and then next middleware
     fs.readFile(thumb)
         .then(() => {
             // console.log("thumb exists");
-            next();
+            next()
         })
         .catch(() => {
             // console.log("not found making thumb");
             resize(filename, width, height)
                 .then(() => {
-                    next();
+                    next()
                 })
                 .catch((err) => {
-                    console.log(err);
-                    res.status(404).send('image not found');
-                });
-        });
-};
+                    console.log(err)
+                    res.status(404).send('image not found')
+                })
+        })
+}
 // this block takes an image and resizes it saves it
 async function resize(
     filename: string,
     width: number,
     height: number
 ): Promise<void> {
-    const imgPath = path.join(`${fullDir}`,`${filename}`);
-    const thumbPath = path.join(`${thumbDir}`,`${filename}_${width}_${height}.png`);
-    console.log(imgPath);
+    const imgPath = path.join(`${fullDir}`, `${filename}`)
+    const thumbPath = path.join(
+        `${thumbDir}`,
+        `${filename}_${width}_${height}.png`
+    )
+    console.log(imgPath)
     await sharp(imgPath)
         .resize(width, height, { fit: 'contain' })
-        .toFile(thumbPath);
+        .toFile(thumbPath)
 }
 
-export { resize, checkImage, validate };
+export { resize, checkImage, validate }

@@ -23,7 +23,7 @@ const validate = (req, res, next) => {
     if (String(req.query.filename).match(/.(jpg|jpeg|png)$/i) &&
         Number(req.query.width) > 50 &&
         Number(req.query.height) > 50) {
-        console.log('valid');
+        // console.log('valid');
         next();
     }
     else {
@@ -37,16 +37,16 @@ const checkImage = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     const height = Number(req.query.height);
     const filename = String(req.query.filename);
     const thumb = path_1.default.join(`${thumbDir}`, `${filename}_${width}_${height}.png`);
-    console.log(thumb);
+    // console.log(thumb);
     //if file exists then next middleware
     // else resize the image and save it and then next middleware
     fs_1.promises.readFile(thumb)
         .then(() => {
-        console.log("thumb exists");
+        // console.log("thumb exists");
         next();
     })
         .catch(() => {
-        console.log("not found making thumb");
+        // console.log("not found making thumb");
         resize(filename, width, height)
             .then(() => {
             next();
