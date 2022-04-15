@@ -2,7 +2,8 @@ import express from 'express';
 import routes from './routes/index';
 import path from 'path';
 
-
+const dirname = path.join(__dirname);
+console.log(dirname);
 const app = express();
 const port = 3000;
 const host: number | string = process.env.HOST || 'localhost';

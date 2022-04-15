@@ -1,7 +1,10 @@
 import express from 'express';
 import sharp from 'sharp';
 import { promises as fs } from 'fs';
+import path from 'path';
 
+const thumbDir = path.join(__dirname, 'images/thumbs');
+const fullDir = path.join(__dirname, 'images/full');
 //this middleware is used to validate the query params
 const validate = (
     req: express.Request,
@@ -30,10 +33,10 @@ const checkImage = async (
     const width = Number(req.query.width);
     const height = Number(req.query.height);
     const filename = String(req.query.filename);
-    const thumbPath = `./images/thumbs/${filename}+${width}+${height}.png`;
+    const thumb = `${thumbDir}/${filename}+${width}+${height}.png`;
     //if file exists then next middleware
     // else resize the image and save it and then next middleware
-    fs.readFile(thumbPath)
+    fs.readFile(thumb)
         .then(() => {
             // console.log("thumb exists");
             next();
@@ -56,9 +59,9 @@ async function resize(
     width: number,
     height: number
 ): Promise<void> {
-    await sharp(`./images/full/${filename}`)
+    await sharp(`${fullDir}/${filename}`)
         .resize(width, height, { fit: 'contain' })
-        .toFile(`./images/thumbs/${filename}+${width}+${height}.png`);
+        .toFile(`${thumbDir}/${filename}_${width}_${height}.png`);
 }
 
 export { resize, checkImage, validate };
